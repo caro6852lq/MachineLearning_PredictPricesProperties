@@ -1,21 +1,24 @@
 # MachineLearning_PredictPricesProperties
 This repository contein the midterm project for course of Machine Learning in Data Talks Club
 
+-----------------------------------------------------------------------------------------------
+
 🏙️ Property Price Prediction in Buenos Aires (CABA)
+
+
 📌 Project Description
 
 The goal of this project is to develop a Machine Learning model capable of predicting the sale price of real estate properties in Buenos Aires (CABA) based on features such as location, surface area, number of rooms, bathrooms, property type, and age.
 
 This model aims to:
 
-Estimate property market prices automatically.
+- Estimate property market prices automatically.
 
-Identify underpriced or overpriced listings.
+- Identify underpriced or overpriced listings.
 
-Explore housing market trends across different neighborhoods in the city.
+- Explore housing market trends across different neighborhoods in the city.
 
-This project is part of the Midterm Project for the Machine Learning Zoomcamp by DataTalks.Club
-.
+---- REVISAR!
 
 📂 Repository Structure
 ├── data/
