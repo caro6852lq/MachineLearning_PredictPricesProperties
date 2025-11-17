@@ -84,6 +84,7 @@ df_full_train = df_full_train.reset_index(drop=True)
 y_full_train = df_full_train.price_usd.values
 del df_full_train['price_usd']
 
+#Modelo
 
 def train(df_train, y_train):
     dicts_full_train = df_full_train.to_dict(orient='records')
