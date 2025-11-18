@@ -18,47 +18,108 @@ This model aims to:
 
 - Explore housing market trends across different neighborhoods in the city.
 
----- REVISAR!
-
-📂 Repository Structure
-├── data/
-│   ├── properties_caba.csv         # Dataset with property listings
-│
-├── notebooks/
-│   ├── 01_exploratory_analysis.ipynb   # Exploratory data analysis
-│   ├── 02_feature_engineering.ipynb    # Feature processing and selection
-│   ├── 03_model_training.ipynb         # Model training
-│   ├── 04_evaluation.ipynb             # Model evaluation
-│
-├── models/
-│   ├── model_final.pkl                 # Trained model
-│
-├── requirements.txt                    # Project dependencies
-├── README.md                           # This file
-
 ⚙️ How to Run the Project
 
-Clone the repository
+Follow these steps to set up, train, and test the property price prediction model.
 
-git clone https://github.com/your-username/property-price-prediction-caba.git
-cd property-price-prediction-caba
+### 1\. Initial Setup
 
+#### 1.1. Clone the Repository
 
-Create and activate a virtual environment
+```bash
+git clone https://github.com/caro6852lq/MachineLearning_PredictPricesProperties.git
+cd MachineLearning_PredictPricesProperties
+```
 
-python -m venv .venv
-source .venv/bin/activate        # macOS / Linux
-.venv\Scripts\activate           # Windows
+#### 1.2. Create and Activate a Virtual Environment
 
+```bash
+# On macOS / Linux
+python -m venv .venv 
+source .venv/bin/activate
 
-Install dependencies
+# On Windows
+python -m venv .venv 
+.venv\Scripts\activate
+```
 
-pip install -r requirements.txt
+#### 1.3. Install Dependencies Using **uv**
 
+This project uses the **uv** package manager (a fast, modern installer) along with the `uv.lock` file for precise dependency management.
 
-Run the notebooks
+**⚠️ Prerequisite:** Make sure you have `uv` installed globally. If not, you can install it using `pip install uv`.
 
-Open Jupyter Notebook or VSCode and run the notebooks in /notebooks in order, starting with the exploratory analysis.
+Once inside the virtual environment, sync and install all dependencies:
+
+```bash
+uv sync
+```
+
+*(This command reads the project dependencies and installs them based on the locked versions in `uv.lock`.)*
+
+-----
+
+### 2\. Model Training
+
+You can train the model using the provided Python script.
+
+#### Train and Save the Model
+
+Run the training script. This process will **train the model** and **save the final model (XGBoost)** as `model_xgb.bin` in the project root.
+
+```bash
+python train.py
+```
+
+-----
+
+### 3\. Prediction with the Trained Model
+
+Once the `model_xgb.bin` file is available, you can test predictions.
+
+#### Local Prediction Test
+
+Execute the `predict.py` script to load the model and perform a sample prediction.
+
+```bash
+python predict.py
+```
+
+The script will output the predicted price for the defined sample input data.
+
+-----
+
+### 4\. Deployment
+
+The project is configured to be deployed as a web service, using Docker and Fly.io.
+
+#### 4.1. Build the Docker Image
+
+Ensure that **Docker** is installed on your system.
+
+```bash
+docker build -t property-price-predictor .
+```
+
+#### 4.2. Run the Container (Local Test)
+
+Run the container and map the port to test the prediction API locally.
+
+```bash
+docker run -it --rm -p 9696:9696 property-price-predictor
+```
+
+Once the container is running, the API will be available at `http://localhost:9696/predict` for receiving `POST` requests.
+
+#### 4.3. Deploy to Fly.io (Optional)
+
+If you wish to deploy the application online, use the Fly.io CLI, which will utilize the `fly.toml` file for configuration.
+
+```bash
+fly deploy
+```
+
+-----
 
 🧠 Models and Metrics
 
@@ -74,13 +135,7 @@ XGBoost Regressor
 
 The main evaluation metric used was the Root Mean Squared Error (RMSE), which measures the average difference between predicted and actual prices.
 
-🚀 Next Steps
 
-Add geographic features (latitude/longitude) for better accuracy.
-
-Deploy the model as a web service using Flask or FastAPI.
-
-Build an interactive dashboard to visualize predictions.
 
 👩‍💻 Author
 
