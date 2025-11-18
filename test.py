@@ -4,13 +4,13 @@ url = "http://localhost:9696/predict"
 
 house= {
     "property_type": "apartment",
-    "lat": -34.56,
-    "lon": -58.45,
-    "surface_total": 71,
-    "surface_covered": 68,
-    "rooms": 3
-    "barrio": "SAN CRISTOBAL"
-    "comuna": 3
+     "lat": -34.5438853785,
+     "lon": -58.4779876511999,
+     "surface_total": 40,
+     "surface_covered": 35,
+     "rooms": 4,
+     "barrio": "SAAVEDRA",
+     "comuna": 12
 
 }
 
