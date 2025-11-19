@@ -18,6 +18,20 @@ This model aims to:
 
 - Explore housing market trends across different neighborhoods in the city.
 
+  🧠 Models and Metrics
+
+Several regression models were tested, including:
+
+Linear Regression
+
+Decision Tree Regressor
+
+Random Forest Regressor
+
+XGBoost Regressor
+
+The main evaluation metric used was the R², the model sected was XGBoost Regressor.
+
 ⚙️ How to Run the Project
 
 Follow these steps to set up, train, and test the property price prediction model.
@@ -119,26 +133,9 @@ If you wish to deploy the application online, use the Fly.io CLI, which will uti
 fly deploy
 ```
 
------
-
-🧠 Models and Metrics
-
-Several regression models were tested, including:
-
-Linear Regression
-
-Decision Tree Regressor
-
-Random Forest Regressor
-
-XGBoost Regressor
-
-The main evaluation metric used was the Root Mean Squared Error (RMSE), which measures the average difference between predicted and actual prices.
-
-
 
 👩‍💻 Author
 
 Carolina Vergara
 Midterm Project — Machine Learning Zoomcamp (DataTalks.Club)
-📅 October 2025
+📅 November 2025
