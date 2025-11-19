@@ -18,7 +18,33 @@ This model aims to:
 
 - Explore housing market trends across different neighborhoods in the city.
 
-  🧠 Models and Metrics
+Here is **only the DATA section**, rewritten **in English**, clean and ready for your README:
+
+---
+
+📁 Data
+
+The dataset used in this project is stored in the **`/Data`** folder:
+
+```
+/Data
+└── Dataset_Inmuebles.xlsx
+```
+
+These files were provided internally by the company.
+All data cleaning, preprocessing, and exploratory analysis were performed in the notebook located in **`/Notebook`**, and the same transformations are fully replicated inside the training script (`train.py`).
+
+The preprocessing steps include:
+
+* Handling missing values
+* Converting categorical variables
+* Feature engineering
+* Normalizing selected numerical fields
+* Encoding features using **DictVectorizer (`dv.pkl`)**
+
+This ensures the training pipeline and the prediction pipeline remain consistent.
+
+🧠 Models and Metrics
 
 Several regression models were tested, including:
 
