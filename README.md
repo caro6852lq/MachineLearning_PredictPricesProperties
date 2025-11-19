@@ -31,7 +31,7 @@ The dataset used in this project is stored in the **`/Data`** folder:
 └── Dataset_Inmuebles.xlsx
 ```
 
-These files were provided internally by the company.
+The dataset was taken from the learning materials provided in a course I completed.
 All data cleaning, preprocessing, and exploratory analysis were performed in the notebook located in **`/Notebook`**, and the same transformations are fully replicated inside the training script (`train.py`).
 
 The preprocessing steps include:
@@ -42,7 +42,6 @@ The preprocessing steps include:
 * Normalizing selected numerical fields
 * Encoding features using **DictVectorizer (`dv.pkl`)**
 
-This ensures the training pipeline and the prediction pipeline remain consistent.
 
 🧠 Models and Metrics
 
